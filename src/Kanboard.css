@@ -4,20 +4,64 @@
     align-items: center;
     padding: 20px;
   }
+  .groupi{
+    margin-left: 3rem;
+    padding: 0.2rem 0.1rem;
+    border: 1px solid grey;
+    border-radius: 5px;
+  }
+  .sorrt{
+    margin-left: 3rem;
+    padding: 0.2rem 0.1rem;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
   
+  .butn{
+    display:flex;
+    align-items: center;
+    border: 1px solid grey;
+    
+    border-radius: 5px;
+    background-color:white;
+  }
+  .display-options{
+  
+    position: absolute;
+    background-color:white;
+    top:2rem;
+    left:2rem;
+  }
   .controls {
     margin-bottom: 20px;
   }
   
   .board {
+   
+    background-color: #F4F5F8;
     display: flex;
+    padding: 1rem;
+ 
   }
   
   .card {
-   
     border-radius: 5px;
-    padding: 10px;
-    margin: 10px;
-    width: 14rem;
-  }
+   padding: 0;
+  padding-right: 1rem;
+  background-color: white;
+    margin: 5px;
+    width: 15.5rem;
+    height: 7rem;
   
+  margin-right: 0.85rem;
+  margin-left: 0.85rem;
+    margin-bottom: 2rem;
+  }
+
+  .options-dropdown{
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 0.45rem 0.75rem;
+    padding-bottom:0 !important;
+    margin-top: 0.5rem;
+  }
