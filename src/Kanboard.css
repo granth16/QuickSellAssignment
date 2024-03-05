@@ -16,14 +16,28 @@
     border: 1px solid grey;
     border-radius: 5px;
 }
-  
-  .butn{
+.controls :hover{
+    cursor: pointer;
+}
+.groupi :hover{
+    cursor: pointer;
+}
+.sorrt :hover{
+    cursor: pointer;
+}
+ .butn{
     display:flex;
     align-items: center;
     border: 1px solid grey;
     
     border-radius: 5px;
     background-color:white;
+  }
+  .image :hover{
+    cursor: pointer;
+  }
+  .butn :hover{
+    cursor: pointer;
   }
   .display-options{
   

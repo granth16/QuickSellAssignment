@@ -2,22 +2,22 @@ import React, { useState, useEffect } from "react";
 import "./Kanboard.css";
 import arrow from "./assets/down-arrow.svg";
 import menu from "./assets/menu.svg";
-import user from "./assets/user.png";
-import user1 from "./assets/user.png";
-import user2 from "./assets/user.png";
-import user3 from "./assets/user.png";
-import user4 from "./assets/user.png";
-import user5 from "./assets/user.png";
-import user6 from "./assets/user.png";
-import user7 from "./assets/user.png";
-import user8 from "./assets/user.png";
-import user9 from "./assets/user.png";
 
+import user1 from "./assets/user1.png";
+import user2 from "./assets/user2.png";
+import user3 from "./assets/user3.png";
+import user4 from "./assets/user4.png";
+import user5 from "./assets/user5.png";
+import user6 from "./assets/user6.png";
+import user7 from "./assets/user7.png";
+import user8 from "./assets/user8.png";
+import user9 from "./assets/user9.png";
+import user10 from "./assets/user.png";
 import Card from "./Card";
 function KanbanBoard() {
     const [displayOptionsVisible, setDisplayOptionsVisible] = useState(false);
     const images = [
-        user,
+      
         user1,
         user2,
         user3,
@@ -27,7 +27,9 @@ function KanbanBoard() {
         user7,
         user8,
         user9,
-      ];
+        user10
+    ];
+      console.log(images,"img2");
   const [tickets, setTickets] = useState([]);
   const [groupingOption, setGroupingOption] = useState("status");
   const [sortingOption, setSortingOption] = useState("priority");
@@ -87,11 +89,11 @@ function KanbanBoard() {
 
     return groupedTickets;
   };
-
-  const getUserImage = (index) => {
-    console.log(index,"kll");
-    return `user${index + 1}`; // Assuming the image filenames follow this pattern
-  };
+// let val=0;
+//   const getUserImage = (index) => {
+//     console.log(index,"kll");
+//     return images[val++]; 
+//   };
 
   const mapPriorityToValue = (priority) => {
     switch (priority) {
@@ -114,14 +116,14 @@ function KanbanBoard() {
     <div className="kanban-board">
          <div className="display-options">
         <div className="butn" onClick={toggleDisplayOptions}>
-        <img style={{ marginLeft:"0.5rem",marginRight:"0.5rem",height:"0.9rem"}} src={menu} />
-          Display 
-          <img style={{height:"0.9rem",marginLeft:"0.3rem"}} src={arrow} />
+        <img className="image" style={{ marginLeft:"0.5rem",marginRight:"0.5rem",height:"0.9rem"}} src={menu} />
+          <span>Display </span>
+          <img className="image"  style={{height:"0.9rem",marginLeft:"0.3rem",marginRight:"0.3rem", marginTop:"0.25rem"}} src={arrow} />
         </div>
         {displayOptionsVisible && (
           <div className="options-dropdown">
             <div className="controls">
-              <label style={{fontSize:"0.9rem"}} htmlFor="grouping">Grouping</label>
+              <label className="lbl" style={{fontSize:"0.9rem"}} htmlFor="grouping">Grouping</label>
               <select
                 id="grouping"
                 className="groupi"
