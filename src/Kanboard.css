@@ -1,0 +1,23 @@
+.kanban-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .controls {
+    margin-bottom: 20px;
+  }
+  
+  .board {
+    display: flex;
+  }
+  
+  .card {
+   
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 14rem;
+  }
+  
