@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
-import './Card.css';
-import user from "./assets/user.png";
-
+import '../styles/Card.css';
+import user from "../assets/user.png";
+import menu1 from "../assets/menu.png";
 const Card = ({ id, title, status, user, priority, tag, img }) => {
   const titleRef = useRef(null);
   const [truncatedTitle, setTruncatedTitle] = useState('');
@@ -22,8 +22,7 @@ const Card = ({ id, title, status, user, priority, tag, img }) => {
 //           container.textContent = text + '...';
 //         }
 //         setTruncatedTitle(text);
-//       }
-//     };
+//       }/     };
 
 //     truncateText();
 //     window.addEventListener('resize', truncateText);
@@ -42,9 +41,15 @@ const Card = ({ id, title, status, user, priority, tag, img }) => {
       <div className="title" ref={titleRef}>
       <span className="truncate">{title}</span>
       </div>
-      <div className="tags">
-        <ul>
-        <li className='list' >{tag[0]}</li>
+      <div className="tags">   <img src={menu1} style={{height:"0.95rem",marginLeft:"0.5rem"}}/>    <ul>
+     
+        <li className='list' >
+         
+          
+           <div style={{marginLeft:"-0.35rem"}}> {tag[0]}</div>
+         
+           
+            </li>
         </ul>
         </div>
     </div>

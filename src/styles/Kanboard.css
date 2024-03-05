@@ -7,11 +7,13 @@
   .groupi{
     margin-left: 3rem;
     padding: 0.2rem 0.1rem;
+    width: 5rem;
     border: 1px solid grey;
     border-radius: 5px;
   }
   .sorrt{
     margin-left: 3rem;
+    width: 5rem;
     padding: 0.2rem 0.1rem;
     border: 1px solid grey;
     border-radius: 5px;
@@ -75,7 +77,10 @@
   .options-dropdown{
     border: 1px solid grey;
     border-radius: 5px;
-    padding: 0.45rem 0.75rem;
+    padding: 0.75rem 0.75rem;
     padding-bottom:0 !important;
     margin-top: 0.5rem;
+  }
+  .status :hover{
+    cursor: pointer;
   }

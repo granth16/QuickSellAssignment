@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
-import "./Kanboard.css";
-import arrow from "./assets/down-arrow.svg";
-import menu from "./assets/menu.svg";
-
-import user1 from "./assets/user1.png";
-import user2 from "./assets/user2.png";
-import user3 from "./assets/user3.png";
-import user4 from "./assets/user4.png";
-import user5 from "./assets/user5.png";
-import user6 from "./assets/user6.png";
-import user7 from "./assets/user7.png";
-import user8 from "./assets/user8.png";
-import user9 from "./assets/user9.png";
-import user10 from "./assets/user.png";
+import "../styles/Kanboard.css";
+import arrow from "../assets/down-arrow.svg";
+import menu from "../assets/menu.svg";
+import menu1 from "../assets/menu.png";
+import user1 from "../assets/user1.png";
+import user2 from "../assets/user2.png";
+import user3 from "../assets/user3.png";
+import user4 from "../assets/user4.png";
+import user5 from "../assets/user5.png";
+import user6 from "../assets/user6.png";
+import user7 from "../assets/user7.png";
+import user8 from "../assets/user8.png";
+import user9 from "../assets/user9.png";
+import user10 from "../assets/user.png";
 import Card from "./Card";
 function KanbanBoard() {
     const [displayOptionsVisible, setDisplayOptionsVisible] = useState(false);
@@ -39,6 +39,7 @@ function KanbanBoard() {
     setDisplayOptionsVisible(!displayOptionsVisible);
   };
   let k=0; 
+  let k1=9;
   useEffect(() => {
     fetchData();
   }, []);
@@ -94,6 +95,20 @@ function KanbanBoard() {
 //     console.log(index,"kll");
 //     return images[val++]; 
 //   };
+const priorityLabels = {
+  4: "Urgent",
+  3: "High",
+  2: "Medium",
+  1: "Low",
+  0: "No priority"
+};
+const userIdToName = {
+  "usr-1": "Anoop sharma",
+  "usr-2": "Yogesh",
+  "usr-3": "Shankar Kumar",
+  "usr-4": "Ramesh",
+  "usr-5": "Suresh"
+};
 
   const mapPriorityToValue = (priority) => {
     switch (priority) {
@@ -118,7 +133,7 @@ function KanbanBoard() {
         <div className="butn" onClick={toggleDisplayOptions}>
         <img className="image" style={{ marginLeft:"0.5rem",marginRight:"0.5rem",height:"0.9rem"}} src={menu} />
           <span>Display </span>
-          <img className="image"  style={{height:"0.9rem",marginLeft:"0.3rem",marginRight:"0.3rem", marginTop:"0.25rem"}} src={arrow} />
+          <img className="image"  style={{height:"0.9rem",marginLeft:"0.3rem",marginRight:"0.5rem", marginTop:"0.25rem"}} src={arrow} />
         </div>
         {displayOptionsVisible && (
           <div className="options-dropdown">
@@ -157,8 +172,15 @@ function KanbanBoard() {
         {Object.entries(groupedAndSortedTickets).map(
           ([group, ticketsInGroup]) => (
             <div key={group} className="group">
-              <h2>{group}</h2>
-              {ticketsInGroup.map((ticket, index) => (
+              <h2 style={{fontSize:"1.2rem"}}>{group.includes("usr")
+        ? userIdToName[ticketsInGroup[0].userId] // Display user name based on the first ticket in the group
+        : !isNaN(parseInt(group)) && group >= 0 && group <= 5 
+        ? priorityLabels[ticketsInGroup[0].priority] // Display priority label based on the first ticket in the group
+        : group.includes("usr") // If not "User" group or "Priority" group, check if it contains a user ID
+        ? <img src={images[k1--]} style={{ height: "1rem", marginLeft: "-1rem", marginRight: "1rem" }} />
+        : group}
+        </h2>
+                {ticketsInGroup.map((ticket, index) => (
              
                 <div key={ticket.id} className="card">
                   <Card
