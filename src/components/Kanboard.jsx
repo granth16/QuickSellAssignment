@@ -132,13 +132,13 @@ const userIdToName = {
          <div className="display-options">
         <div className="butn" onClick={toggleDisplayOptions}>
         <img className="image" style={{ marginLeft:"0.5rem",marginRight:"0.5rem",height:"0.9rem"}} src={menu} />
-          <span>Display </span>
+          <span style={{color:"black"}}>Display </span>
           <img className="image"  style={{height:"0.9rem",marginLeft:"0.3rem",marginRight:"0.5rem", marginTop:"0.25rem"}} src={arrow} />
         </div>
         {displayOptionsVisible && (
           <div className="options-dropdown">
             <div className="controls">
-              <label className="lbl" style={{fontSize:"0.9rem"}} htmlFor="grouping">Grouping</label>
+              <label className="lbl" style={{fontSize:"0.9rem",color:"black"}} htmlFor="grouping">Grouping</label>
               <select
                 id="grouping"
                 className="groupi"
@@ -151,7 +151,7 @@ const userIdToName = {
               </select>
             </div>
             <div className="controls">
-              <label style={{fontSize:"0.9rem"}}  htmlFor="sorting">Ordering</label>
+              <label style={{fontSize:"0.9rem",color:"black"}}  htmlFor="sorting">Ordering</label>
               <select
                 id="sorting"
                 className="sorrt"
@@ -172,7 +172,7 @@ const userIdToName = {
         {Object.entries(groupedAndSortedTickets).map(
           ([group, ticketsInGroup]) => (
             <div key={group} className="group">
-              <h2 style={{fontSize:"1.2rem"}}>{group.includes("usr")
+              <h2 style={{fontSize:"1.2rem",color:"black"}}>{group.includes("usr")
         ? userIdToName[ticketsInGroup[0].userId] // Display user name based on the first ticket in the group
         : !isNaN(parseInt(group)) && group >= 0 && group <= 5 
         ? priorityLabels[ticketsInGroup[0].priority] // Display priority label based on the first ticket in the group
